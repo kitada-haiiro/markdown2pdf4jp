@@ -14,7 +14,7 @@ jobs:
             --standalone
             --output=output/main.pdf
             --pdf-engine=lualatex
-            -V documentclass=ltjsarticle
+            -V documentclass=jsarticle
             -V luatexjapresetoptions=hiragino-pron
             main.md
       - uses: actions/upload-artifact@master
