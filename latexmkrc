@@ -1,5 +1,4 @@
 
-#!/usr/bin/env perl
 $pdf_mode         = 3;
 $latex            = 'platex -halt-on-error';
 $latex_silent     = 'platex -halt-on-error -interaction=batchmode';
