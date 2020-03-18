@@ -27,7 +27,7 @@ main() {
     echo "ok"
     ls
     tlmgr --version
-    pandoc test/main.md -o hoge.pdf --pdf-engine=latexmk --pdf-engine-opt="-r" --pdf-engine-opt="latexmkrc"
+    pandoc test/main.md -o hoge.pdf --pdf-engine=lualatex -V documentclass=ltjsarticle -V luatexjapresetoption=ms
 }
 
 main "$@"
