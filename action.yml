@@ -1,0 +1,7 @@
+name: 'markdown to PDF'
+description: 'Convert from markdown to PDF using pandoc + latexmk'
+
+author: 'kitada.haiiro'
+runs:
+    using: 'docker'
+    image: 'Dockerfile'

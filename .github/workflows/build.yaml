@@ -3,21 +3,13 @@ name: build
 on: push
 
 jobs:
-  convert_via_pandoc:
+  simple-test:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
       - run: mkdir output
-      - uses: docker://pandoc/latex:2.9
-        with: # needs a README in your repo root!
-          args:
-            --standalone
-            --output=output/main.pdf
-            --pdf-engine=lualatex
-            -V documentclass=jsarticle
-            -V luatexjapresetoptions=hiragino-pron
-            main.md
-      - uses: actions/upload-artifact@master
-        with:
-          name: output
-          path: output
+      - uses: kitada-haiiro/congenial-potato@master
+        env:
+          OUTPUT_BRANCH: output
+          BUILD_DIR: test
+          TOKEN: ${{ secrets.TOKEN }}
