@@ -25,9 +25,9 @@ if [[ -z "$GITHUB_REPOSITORY" ]]; then
 fi
 main() {
     echo "ok"
+    ls
     tlmgr --version
-    touch hoge.md
-    pandoc hoge.md -o hoge.pdf --pdf-engine=latexmk
+    pandoc test/main.md -o hoge.pdf --pdf-engine=latexmk
 }
 
 main "$@"
