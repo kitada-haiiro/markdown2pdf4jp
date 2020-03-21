@@ -23,6 +23,11 @@ if [[ -z "$GITHUB_REPOSITORY" ]]; then
     echo "Set the GITHUB_REPOSITORY env variable."
     exit 1
 fi
+
+if [[ -z "$args" ]]; then
+    ARGS=$args
+fi
+
 main() {
     echo "Starting print..."
 
@@ -42,7 +47,7 @@ main() {
 
     mkdir out
 
-    pandoc test/main.md -o out/hoge.pdf --pdf-engine=lualatex -V documentclass=ltjsarticle -V luatexjapresetoption=ms
+    pandoc test/main.md -o out/hoge.pdf --pdf-engine=lualatex ${ARGS}
 
     echo "Pushing articats to ${GITHUB_REPOSITORY}:$remote_branch"
 
