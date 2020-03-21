@@ -13,4 +13,6 @@ jobs:
           # PREVIEW_BRANCH: preview
           # BUILD_DIR: .
           TOKEN: ${{ secrets.TOKEN }}
-          args: -V documentclass=ltjsarticle -V luatexjapresetoption=ms
+          args: |
+            -V documentclass=ltjsarticle
+            -V luatexjapresetoption=ms
