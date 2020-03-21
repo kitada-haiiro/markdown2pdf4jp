@@ -10,6 +10,6 @@ jobs:
       - run: mkdir output
       - uses: kitada-haiiro/congenial-potato@master
         env:
-          OUTPUT_BRANCH: output
-          BUILD_DIR: test
+          # PREVIEW_BRANCH: preview
+          # BUILD_DIR: .
           TOKEN: ${{ secrets.TOKEN }}
