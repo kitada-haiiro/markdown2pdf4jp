@@ -45,15 +45,17 @@ main() {
     echo "converting..."
     cd $BUILD_DIR
 
+    echo " args is ${ARGS}."
+
     mkdir out
 
-    pandoc test/main.md -o out/hoge.pdf --pdf-engine=lualatex $ARGS
+    pandoc test/main.md -o out/hoge.pdf --pdf-engine=lualatex ${ARGS}
 
     echo "Pushing articats to ${GITHUB_REPOSITORY}:$remote_branch"
 
     cd out
     git init
-    git config user.name "GA"
+    git config user.name "GithubActions"
     git config user.email "actions@users.noreplay.github.com"
     git add .
 
