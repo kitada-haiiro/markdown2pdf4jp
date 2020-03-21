@@ -24,9 +24,6 @@ if [[ -z "$GITHUB_REPOSITORY" ]]; then
     exit 1
 fi
 
-if [[ -z "$args" ]]; then
-    ARGS=$args
-fi
 
 main() {
     echo "Starting print..."
@@ -45,11 +42,11 @@ main() {
     echo "converting..."
     cd $BUILD_DIR
 
-    echo " args is ${ARGS}."
+    echo " args is $@."
 
     mkdir out
 
-    pandoc test/main.md -o out/hoge.pdf --pdf-engine=lualatex ${ARGS}
+    pandoc test/main.md -o out/hoge.pdf --pdf-engine=lualatex $@
 
     echo "Pushing articats to ${GITHUB_REPOSITORY}:$remote_branch"
 
