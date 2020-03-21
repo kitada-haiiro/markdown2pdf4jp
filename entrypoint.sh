@@ -47,7 +47,7 @@ main() {
 
     mkdir out
 
-    pandoc test/main.md -o out/hoge.pdf --pdf-engine=lualatex ${ARGS}
+    pandoc test/main.md -o out/hoge.pdf --pdf-engine=lualatex $ARGS
 
     echo "Pushing articats to ${GITHUB_REPOSITORY}:$remote_branch"
 
