@@ -1,5 +1,5 @@
 name: 'markdown to PDF'
-description: 'Convert from markdown to PDF using pandoc + latexmk'
+description: 'Convert from markdown to PDF using pandoc via lualatex for JP'
 
 author: 'kitada.haiiro'
 runs:
