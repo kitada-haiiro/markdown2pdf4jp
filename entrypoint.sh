@@ -59,6 +59,7 @@ main() {
     echo "Pushing articats to ${GITHUB_REPOSITORY}:$remote_branch"
 
     cd out
+
     git init
     git config user.name "GithubActions"
     git config user.email "actions@users.noreplay.github.com"
