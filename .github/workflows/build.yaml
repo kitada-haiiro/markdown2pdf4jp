@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: kitada-haiiro/markdown2pdf4jp@master
         env:
-          # PREVIEW_BRANCH: preview
+          PREVIEW_BRANCH: preview_simple
           BUILD_DIR: tests/simple
           TOKEN: ${{ secrets.TOKEN }}
         with:
@@ -23,6 +23,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: kitada-haiiro/markdown2pdf4jp@master
         env:
+          PREVIEW_BRANCH: preview_tate
           BUILD_DIR: tests/simple
           TOKEN: ${{ secrets.TOKEN }}
         with:
@@ -36,6 +37,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: kitada-haiiro/markdown2pdf4jp@master
         env:
+          PREVIEW_BRANCH: preview_tate_w_sty
           BUILD_DIR: tests/template
           TOKEN: ${{ secrets.TOKEN }}
         with:
