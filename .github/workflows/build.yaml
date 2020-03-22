@@ -37,7 +37,7 @@ jobs:
       - uses: kitada-haiiro/markdown2pdf4jp@master
         env:
           BUILD_DIR: tests/template
-          TOKEN ${{ secrets.TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
         with:
           args: >-
             -V luatexjapresetoption=ms
