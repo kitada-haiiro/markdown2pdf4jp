@@ -7,13 +7,25 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - run: mkdir output
-      - uses: kitada-haiiro/congenial-potato@master
+      - uses: kitada-haiiro/markdown2pdf4jp@master
         env:
           # PREVIEW_BRANCH: preview
-          # BUILD_DIR: .
+          BUILD_DIR: test
           TOKEN: ${{ secrets.TOKEN }}
         with:
           args: >-
             -V luatexjapresetoption=ms
             -V documentclass=ltjsarticle
+
+  tate-test:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: kitada-haiiro/markdown2pdf4jp@master
+        env:
+          BUILD_DIR: test
+          TOKEN: ${{ secrets.TOKEN }}
+        with:
+          args: >-
+            -V luatexjapresetoption=ms
+            -V documentclass=ltjtarticle
