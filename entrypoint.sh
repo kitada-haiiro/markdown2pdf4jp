@@ -14,6 +14,14 @@ if [[ -z "$BUILD_DIR" ]]; then
     BUILD_DIR="."
 fi
 
+if [[ -z "$INPUT_NAME" ]]; then
+    INPUT_NAME="main"
+fi
+
+if [[ -z "$OUTPUT_NAME" ]]; then
+    OUTPUT_NAME='output'
+fi
+
 if [[ -z "$GITHUB_TOKEN" ]]; then
     echo "Set the GITHUB_TOKEN env variable."
     exit 1
@@ -46,7 +54,7 @@ main() {
 
     mkdir out
 
-    pandoc main.md -o out/hoge.pdf --pdf-engine=lualatex $@
+    pandoc ${INPUT_NAME}.md -o out/${OUTPUT_NAME}.pdf --pdf-engine=lualatex $@
 
     echo "Pushing articats to ${GITHUB_REPOSITORY}:$remote_branch"
 
