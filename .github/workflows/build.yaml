@@ -11,7 +11,6 @@ jobs:
         env:
           # PREVIEW_BRANCH: preview
           BUILD_DIR: tests/simple
-          OUTPUT_NAME: simple
           TOKEN: ${{ secrets.TOKEN }}
         with:
           args: >-
@@ -25,9 +24,23 @@ jobs:
       - uses: kitada-haiiro/markdown2pdf4jp@master
         env:
           BUILD_DIR: tests/simple
-          OUTPUT_NAME: tate
           TOKEN: ${{ secrets.TOKEN }}
         with:
           args: >-
             -V luatexjapresetoption=ms
             -V documentclass=ltjtarticle
+
+  template-test:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: kitada-haiiro/markdown2pdf4jp@master
+        env:
+          BUILD_DIR: tests/template
+          TOKEN ${{ secrets.TOKEN }}
+        with:
+          args: >-
+            -V luatexjapresetoption=ms
+            -V documentclass=ltjtarticle
+            -H tate.sty
+
